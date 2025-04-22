@@ -3,6 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
   backgroundContainer.className = "background-container";
   document.body.appendChild(backgroundContainer);
 
+  // adding background quote
+  const quoteContainer = document.createElement("div");
+  quoteContainer.id = "background-quote";
+
+  const quoteText = document.createElement("p");
+  quoteText.id = "quote-text";
+  const potentialPhrases = [
+    "You got this.",
+    "Take a deep breath.",
+    "It's gonna be okay.",
+    "This is your day.",
+    "Keep going, you can do this."
+  ]
+  quoteText.textContent = potentialPhrases[Math.floor(Math.random() * 5)]; 
+
+  quoteContainer.appendChild(quoteText);
+  backgroundContainer.appendChild(quoteContainer);
+
   const categoriesContainer = document.getElementById("categories-container");
   const tasksContainer = document.getElementById("tasks-container");
   const taskList = document.getElementById("task-list");
