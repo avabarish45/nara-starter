@@ -17,6 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial background image with 5 deers
   const initialBackground = "assets/original.jpg";
 
+  // Possible encouragement messages
+  const encouragementMessages = [
+    "Great job! Way to get it done",
+    "Nice work! Keep it going",
+    "Way to be!",
+    "Congrats on getting it done!",
+    "Keep up the good work!"
+  ]
+
   // Background images for each category
   const backgroundSets = {
     daily: [
@@ -670,7 +679,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const originalIndex = tasks.indexOf(task);
         tasks[originalIndex].completed = checkbox.checked;
 
+
         if (tasks[originalIndex].completed) {
+          // task has been completed, give an encouragement pop-up
+          // task has been completed, show custom encouragement pop-up
+          const popup = document.createElement("div");
+          popup.className = "encouragement-popup";
+          popup.innerHTML = `
+            <div class="popup-icon">🎉</div>
+            <div class="popup-text">${encouragementMessages[Math.floor(Math.random() * 5)]}</div>
+          `;
+
+          document.body.appendChild(popup);
+
+          // Remove popup after 4 seconds
+          setTimeout(() => {
+            popup.remove();
+          }, 4000);
+
           const deleteButton = taskItem.querySelector(".delete-task");
           if (deleteButton) deleteButton.remove();
         }
