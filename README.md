@@ -1,5 +1,9 @@
 # CIS 3500: Nara Extension Starter
 
+## Ava's Features
+1. I first added the speech bubble encouragement feature, which randomly selects between 5 phrases of affirmation to be displayed when a user has completed a task.
+2. I second added the inspirational quote overlay, which also randomly selects between 5 phrases of encouragement displayed softly in the buttom right corner, so that it is generally always subtly visible to the user.
+
 ## Overview
 This assignment involves enhancing a Chrome extension developed by one of the Top 3 winners of the MCIT hackathon. The project provides hands-on experience in web development, API integration, and collaborative coding.
 
